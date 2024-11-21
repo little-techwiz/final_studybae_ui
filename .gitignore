@@ -1,6 +1,7 @@
 # Miscellaneous
 *.class
 *.log
+*.tmp
 *.pyc
 *.swp
 .DS_Store
@@ -9,6 +10,8 @@
 .history
 .svn/
 migrate_working_dir/
+build/
+.DS_Store
 
 # IntelliJ related
 *.iml
