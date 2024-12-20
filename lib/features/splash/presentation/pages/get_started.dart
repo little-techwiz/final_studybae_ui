@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:studybae/core/configs/theme/app_colours.dart';
 import 'package:studybae/core/utils/constants.dart';
 import 'package:studybae/core/utils/route.dart';
 import 'package:studybae/core/widgets/appButton.dart';
@@ -37,6 +38,7 @@ class GetStarted extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(),
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -48,16 +50,25 @@ class GetStarted extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
-              'Kick start your learning journey today',
-              // overflow: TextOverflow.clip,
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                'Kick start your learning journey today',
+                style: TextStyle(
+                  color: AppColors.textColorWhite
+                ),
+                // overflow: TextOverflow.clip,
+              ),
             ),
           ),
-          AppButton(
-            btnText: 'Get Started',
-            voidCallBack: (){
-              Navigator.pushReplacementNamed(context, authPage);
-            },
+          Padding(
+            padding: const EdgeInsets.all(23.0),
+            child: AppButton(
+              btnText: 'Get Started',
+              voidCallBack: (){
+                Navigator.pushReplacementNamed(context, authPage);
+              },
+            ),
           )
         ],
       ),

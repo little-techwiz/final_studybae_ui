@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:studybae/core/utils/constants.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -50,15 +52,26 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         leading: const BackButton(),
-        title: TextField(
-          controller: _searchController,
-          decoration: const InputDecoration(
-            hintText: "Search",
-            hintStyle: TextStyle(color: Colors.white54),
-            border: InputBorder.none,
+        title: Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[800], // Grey background color
+            borderRadius: BorderRadius.circular(8.0), // Rounded corners
           ),
-          style: const TextStyle(color: Colors.white),
+          child: TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(12.0), // Adjust SVG size
+                child: SvgPicture.asset('${vectorPath}search.svg', color: Colors.white54),
+              ),
+              hintText: "Search",
+              hintStyle: const TextStyle(color: Colors.white54),
+              border: InputBorder.none,
+            ),
+            style: const TextStyle(color: Colors.white),
+          ),
         ),
         actions: [
           IconButton(

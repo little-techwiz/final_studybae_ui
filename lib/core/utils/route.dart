@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:studybae/features/ai/presentation/pages/ai_chat_page.dart';
 import 'package:studybae/features/auth/presentation/pages/authPage.dart';
 import 'package:studybae/features/downloads/presentation/pages/downloads_page.dart';
 import 'package:studybae/features/home/presentation/pages/home_page.dart';
 import 'package:studybae/features/profiles/presentation/pages/profile_page.dart';
+import 'package:studybae/features/search/presentation/%20pages/search_page.dart';
 import 'package:studybae/features/settings/presentation/pages/settings_page.dart';
 import 'package:studybae/features/splash/presentation/pages/get_started.dart';
 import 'package:studybae/features/splash/presentation/pages/splash_page.dart';
@@ -18,6 +20,8 @@ const String studyPage = "/studyPage";
 const String profilePage = "/profilePage";
 const String settingsPage =  "/settingsPage";
 const String streaksPage = "/streaksPage";
+const String chatPage = "/chatPage";
+const String searchPage = "/searchPage";
 
 class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -40,6 +44,10 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => const SettingsPage());
       case streaksPage:
         return MaterialPageRoute(builder: (_) => const StreaksPage());
+      case chatPage:
+        return MaterialPageRoute(builder: (_) => ChatScreen());
+      case searchPage:
+        return MaterialPageRoute(builder: (_) => const SearchPage());
       default:
         return _errorRoute();
     }

@@ -108,7 +108,9 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             icon: SvgPicture.asset('${vectorPath}streaks.svg'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, streaksPage);
+            },
           ),
           IconButton(
             icon: SvgPicture.asset('${vectorPath}streaks.svg'),
@@ -141,7 +143,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.pushNamed(context, chatPage);
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0), // Adjust border radius here
         ),
@@ -170,7 +174,12 @@ class _HomePageState extends State<HomePage> {
               _buildTabButton("Calendar", 1),
             ],
           ),
-          SvgPicture.asset('${vectorPath}search.svg'),
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, searchPage);
+            },
+            child: SvgPicture.asset('${vectorPath}search.svg')
+          ),
         ]
       ),
     );

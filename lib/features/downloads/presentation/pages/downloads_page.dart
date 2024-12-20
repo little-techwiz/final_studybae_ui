@@ -124,7 +124,9 @@ class _DownloadPageState extends State<DownloadPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.pushNamed(context, chatPage);
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0), // Adjust border radius here
         ),
